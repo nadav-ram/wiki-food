@@ -16,7 +16,9 @@
 
     <div class="container" style="padding-top: 1.5rem;">
 
-        {% include 'home.html' %}
+        {% include 'includes/_flash.html' %}
+
+        {% block body %}{% endblock %}
 
     </div>
 

@@ -1,4 +1,9 @@
+{% extends 'layout.html' %}
+{% block body %}
+
 {% for food in foods %}
 <a href="/food/{{  food  }}">{{ food }}</a>
 <br>
 {% endfor %}
+
+{% endblock %}

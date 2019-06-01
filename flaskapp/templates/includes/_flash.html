@@ -1,0 +1,19 @@
+<div class="columns is-centered">
+    <div class="column is-half">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="notification has-text-centered is-{{ category }}">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        {% if error %}
+        <div class="notification has-text-centered is-danger">{{error}}</div>
+        {% endif %}
+
+        {% if msg %}
+        <div class="notification has-text-centered is-success">{{msg}}</div>
+        {% endif %}
+    </div>
+</div>
