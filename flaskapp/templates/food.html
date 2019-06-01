@@ -1,6 +1,19 @@
 {% extends 'layout.html' %}
 {% block body %}
 
-test
+<h1 class="title is-2">{{ food }}</h1>
+<hr>
+
+
+{% for view in views %}
+<div class="box">
+    <ul>
+        <li><b>Year</b>: {{view['year']}}</li>
+        <li><b>Month</b>: {{view['month']}}</li>
+        <li><b>Location</b>: {{view['location']}}</li>
+    </ul>
+</div>
+{% endfor %}
+
 
 {% endblock body %}

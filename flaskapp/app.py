@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, flash, redirect, request
-from data import data as data
+from data import data
 
 app = Flask(__name__)
 app.secret_key = '12345678'
@@ -11,6 +11,15 @@ for view in data:
     if view['food'] in foods:
         continue
     foods.append(view['food'])
+
+
+def get_views(food):
+    views = []
+    for view in data:
+        if view['food'] == food:
+            views.append(view)
+
+    return views
 
 
 @app.route('/home')
@@ -26,7 +35,7 @@ def food(food):
         flash(f'{food} not found', 'danger')
         return redirect(url_for('home'))
 
-    return render_template('food.html', food=food)
+    return render_template('food.html', food=food, views=get_views(food))
 
 
 if __name__ == '__main__':
