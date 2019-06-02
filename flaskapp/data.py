@@ -2,85 +2,85 @@ data = [
     {
         'food': 'pizza',
         'year': 2018,
-        'month': 'jan',
+        'month': '1',
         'location': 'usa'
     },
     {
         'food': 'banana',
         'year': 2018,
-        'month': 'feb',
+        'month': '2',
         'location': 'israel'
     },
     {
         'food': 'chocolate',
         'year': 2019,
-        'month': 'mar',
+        'month': '3',
         'location': 'germany'
     },
     {
         'food': 'banana',
         'year': 2018,
-        'month': 'apr',
+        'month': '4',
         'location': 'usa'
     },
     {
         'food': 'pizza',
         'year': 2019,
-        'month': 'may',
+        'month': '5',
         'location': 'usa'
     },
     {
         'food': 'stake',
         'year': 2019,
-        'month': 'jun',
+        'month': '6',
         'location': 'japan'
     },
     {
         'food': 'pizza',
         'year': 2018,
-        'month': 'jul',
+        'month': '7',
         'location': 'canada'
     },
     {
         'food': 'stake',
         'year': 2018,
-        'month': 'aug',
+        'month': '8',
         'location': 'canada'
     },
     {
         'food': 'pizza',
         'year': 2018,
-        'month': 'sep',
+        'month': '9',
         'location': 'bulgaria'
     },
     {
         'food': 'stake',
         'year': 2019,
-        'month': 'oct',
+        'month': '10',
         'location': 'israel'
     },
     {
         'food': 'pizza',
         'year': 2018,
-        'month': 'nov',
+        'month': '11',
         'location': 'usa'
     },
     {
         'food': 'chocolate',
         'year': 2018,
-        'month': 'dec',
+        'month': '12',
         'location': 'israel'
     },
     {
         'food': 'sushi',
         'year': 2019,
-        'month': 'jan',
+        'month': '1',
         'location': 'israel'
     },
     {
         'food': 'banana',
         'year': 2019,
-        'month': 'feb',
+        'month': '2',
         'location': 'bulgaria'
     },
 ]

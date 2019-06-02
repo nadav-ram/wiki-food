@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, flash, redirect, request
+from flask import Flask, render_template, url_for, flash, redirect, request, abort
 from data import data
 
 app = Flask(__name__)
@@ -13,6 +13,7 @@ for view in data:
     foods.append(view['food'])
 
 
+# Return all views of a food
 def get_views(food):
     views = []
     for view in data:
@@ -22,20 +23,21 @@ def get_views(food):
     return views
 
 
+# Home page
 @app.route('/home')
 @app.route('/')
 def home():
     return render_template('home.html', foods=foods)
 
 
+# Single food page
 @app.route('/food/<food>')
 def food(food):
 
-    if food not in foods:
-        flash(f'{food} not found', 'danger')
-        return redirect(url_for('home'))
-
-    return render_template('food.html', food=food, views=get_views(food))
+    if food in foods:
+        return render_template('food.html', food=food, views=get_views(food))
+    else:
+        abort(404)
 
 
 if __name__ == '__main__':
