@@ -3,84 +3,84 @@ data = [
         'food': 'pizza',
         'year': 2018,
         'month': '1',
-        'location': 'usa'
+        'location': [37.090240, -95.712891]
     },
     {
         'food': 'banana',
         'year': 2018,
         'month': '2',
-        'location': 'israel'
+        'location': [32.085300, 34.781769]
     },
     {
         'food': 'chocolate',
         'year': 2019,
         'month': '3',
-        'location': 'germany'
+        'location': [51.165691, 10.451526]
     },
     {
         'food': 'banana',
         'year': 2018,
         'month': '4',
-        'location': 'usa'
+        'location': [37.090240, -95.712891]
     },
     {
         'food': 'pizza',
         'year': 2019,
         'month': '5',
-        'location': 'usa'
+        'location': [37.090240, -95.712891]
     },
     {
         'food': 'stake',
         'year': 2019,
         'month': '6',
-        'location': 'japan'
+        'location': [35.689487, 139.691711]
     },
     {
         'food': 'pizza',
         'year': 2018,
         'month': '7',
-        'location': 'canada'
+        'location': [56.130367, -106.346771]
     },
     {
         'food': 'stake',
         'year': 2018,
         'month': '8',
-        'location': 'canada'
+        'location': [56.130367, -106.346771]
     },
     {
         'food': 'pizza',
         'year': 2018,
         'month': '9',
-        'location': 'bulgaria'
+        'location': [42.697708, 23.321867]
     },
     {
         'food': 'stake',
         'year': 2019,
         'month': '10',
-        'location': 'israel'
+        'location': [32.085300, 34.781769]
     },
     {
         'food': 'pizza',
         'year': 2018,
         'month': '11',
-        'location': 'usa'
+        'location': [37.090240, -95.712891]
     },
     {
         'food': 'chocolate',
         'year': 2018,
         'month': '12',
-        'location': 'israel'
+        'location': [32.085300, 34.781769]
     },
     {
         'food': 'sushi',
         'year': 2019,
         'month': '1',
-        'location': 'israel'
+        'location': [32.085300, 34.781769]
     },
     {
         'food': 'banana',
         'year': 2019,
         'month': '2',
-        'location': 'bulgaria'
+        'location': [42.697708, 23.321867]
     },
 ]
