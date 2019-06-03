@@ -11,8 +11,8 @@ def render_map(food):
             lats.append(view['location'][0])
             longs.append(view['location'][1])
 
-    gmap = gmplot.GoogleMapPlotter(25, 0, 3)
-    gmap.scatter(lats, longs, 'red', size=125000, marker=False)
+    gmap = gmplot.GoogleMapPlotter(25, 0, 2)
+    gmap.scatter(lats, longs, 'red', size=150000, marker=False)
 
     gmap.draw('gmplot.html')
 
