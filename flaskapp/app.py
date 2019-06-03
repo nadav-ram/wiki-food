@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, flash, redirect, request, abort, send_from_directory
 from data import data
-from map_test import render_map
+from render_map import render_map
 
 app = Flask(__name__)
 app.secret_key = '12345678'
@@ -42,6 +42,7 @@ def food(food):
         abort(404)
 
 
+# Render map by food
 @app.route('/render_map/<query>')
 def map(query):
     render_map(query)
