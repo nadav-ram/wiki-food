@@ -3,142 +3,122 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 <title>Google Maps - pygmaps </title>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&sensor=true_or_false&key=AIzaSyD-FJQEw4YX1tIhTcN_fmkEe7BXzaxEAuE"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&sensor=true_or_false"></script>
 <script type="text/javascript">
 	function initialize() {
-		var centerlatlng = new google.maps.LatLng(90.000000, -90.000000);
+		var centerlatlng = new google.maps.LatLng(25.000000, 0.000000);
 		var myOptions = {
-			zoom: 0,
+			zoom: 2,
 			center: centerlatlng,
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
 		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
-		var latlng = new google.maps.LatLng(-95.712891, 37.090240);
-		var img = new google.maps.MarkerImage('C:\Users\User.PHASHARON\Desktop\wiki-food\env\lib\site-packages\gmplot\markers/FF0000.png');
-		var marker = new google.maps.Marker({
-		title: "no implementation",
-		icon: img,
-		position: latlng
-		});
-		marker.setMap(map);
+var coords = [
+new google.maps.LatLng(52.513024, 10.451526),
+new google.maps.LatLng(52.491940, 10.067305),
+new google.maps.LatLng(52.429388, 9.695816),
+new google.maps.LatLng(52.327440, 9.349263),
+new google.maps.LatLng(52.189451, 9.038830),
+new google.maps.LatLng(52.019924, 8.774259),
+new google.maps.LatLng(51.824335, 8.563521),
+new google.maps.LatLng(51.608920, 8.412594),
+new google.maps.LatLng(51.380454, 8.325348),
+new google.maps.LatLng(51.146017, 8.303522),
+new google.maps.LatLng(50.912765, 8.346793),
+new google.maps.LatLng(50.687712, 8.452907),
+new google.maps.LatLng(50.477526, 8.617850),
+new google.maps.LatLng(50.288354, 8.836063),
+new google.maps.LatLng(50.125660, 9.100658),
+new google.maps.LatLng(49.994094, 9.403654),
+new google.maps.LatLng(49.897385, 9.736198),
+new google.maps.LatLng(49.838254, 10.088796),
+new google.maps.LatLng(49.818358, 10.451526),
+new google.maps.LatLng(49.838254, 10.814256),
+new google.maps.LatLng(49.897385, 11.166854),
+new google.maps.LatLng(49.994094, 11.499398),
+new google.maps.LatLng(50.125660, 11.802394),
+new google.maps.LatLng(50.288354, 12.066989),
+new google.maps.LatLng(50.477526, 12.285202),
+new google.maps.LatLng(50.687712, 12.450145),
+new google.maps.LatLng(50.912765, 12.556259),
+new google.maps.LatLng(51.146017, 12.599530),
+new google.maps.LatLng(51.380454, 12.577704),
+new google.maps.LatLng(51.608920, 12.490458),
+new google.maps.LatLng(51.824335, 12.339531),
+new google.maps.LatLng(52.019924, 12.128793),
+new google.maps.LatLng(52.189451, 11.864222),
+new google.maps.LatLng(52.327440, 11.553789),
+new google.maps.LatLng(52.429388, 11.207236),
+new google.maps.LatLng(52.491940, 10.835747),
+];
 
-		var latlng = new google.maps.LatLng(34.781769, 32.085300);
-		var img = new google.maps.MarkerImage('C:\Users\User.PHASHARON\Desktop\wiki-food\env\lib\site-packages\gmplot\markers/FF0000.png');
-		var marker = new google.maps.Marker({
-		title: "no implementation",
-		icon: img,
-		position: latlng
-		});
-		marker.setMap(map);
+var polygon = new google.maps.Polygon({
+clickable: false,
+geodesic: true,
+fillColor: "#FF0000",
+fillOpacity: 0.300000,
+paths: coords,
+strokeColor: "#FF0000",
+strokeOpacity: 1.000000,
+strokeWeight: 1
+});
 
-		var latlng = new google.maps.LatLng(10.451526, 51.165691);
-		var img = new google.maps.MarkerImage('C:\Users\User.PHASHARON\Desktop\wiki-food\env\lib\site-packages\gmplot\markers/FF0000.png');
-		var marker = new google.maps.Marker({
-		title: "no implementation",
-		icon: img,
-		position: latlng
-		});
-		marker.setMap(map);
+polygon.setMap(map);
 
-		var latlng = new google.maps.LatLng(-95.712891, 37.090240);
-		var img = new google.maps.MarkerImage('C:\Users\User.PHASHARON\Desktop\wiki-food\env\lib\site-packages\gmplot\markers/FF0000.png');
-		var marker = new google.maps.Marker({
-		title: "no implementation",
-		icon: img,
-		position: latlng
-		});
-		marker.setMap(map);
 
-		var latlng = new google.maps.LatLng(-95.712891, 37.090240);
-		var img = new google.maps.MarkerImage('C:\Users\User.PHASHARON\Desktop\wiki-food\env\lib\site-packages\gmplot\markers/FF0000.png');
-		var marker = new google.maps.Marker({
-		title: "no implementation",
-		icon: img,
-		position: latlng
-		});
-		marker.setMap(map);
+var coords = [
+new google.maps.LatLng(33.432633, 34.781769),
+new google.maps.LatLng(33.411856, 34.501511),
+new google.maps.LatLng(33.350187, 34.230153),
+new google.maps.LatLng(33.249582, 33.976275),
+new google.maps.LatLng(33.113226, 33.747834),
+new google.maps.LatLng(32.945418, 33.551890),
+new google.maps.LatLng(32.751416, 33.394379),
+new google.maps.LatLng(32.537264, 33.279937),
+new google.maps.LatLng(32.309585, 33.211784),
+new google.maps.LatLng(32.075369, 33.191657),
+new google.maps.LatLng(31.841752, 33.219800),
+new google.maps.LatLng(31.615797, 33.295003),
+new google.maps.LatLng(31.404286, 33.414679),
+new google.maps.LatLng(31.213524, 33.574978),
+new google.maps.LatLng(31.049164, 33.770927),
+new google.maps.LatLng(30.916050, 33.996585),
+new google.maps.LatLng(30.818089, 34.245229),
+new google.maps.LatLng(30.758145, 34.509533),
+new google.maps.LatLng(30.737967, 34.781769),
+new google.maps.LatLng(30.758145, 35.054005),
+new google.maps.LatLng(30.818089, 35.318309),
+new google.maps.LatLng(30.916050, 35.566953),
+new google.maps.LatLng(31.049164, 35.792611),
+new google.maps.LatLng(31.213524, 35.988560),
+new google.maps.LatLng(31.404286, 36.148859),
+new google.maps.LatLng(31.615797, 36.268535),
+new google.maps.LatLng(31.841752, 36.343738),
+new google.maps.LatLng(32.075369, 36.371881),
+new google.maps.LatLng(32.309585, 36.351754),
+new google.maps.LatLng(32.537264, 36.283601),
+new google.maps.LatLng(32.751416, 36.169159),
+new google.maps.LatLng(32.945418, 36.011648),
+new google.maps.LatLng(33.113226, 35.815704),
+new google.maps.LatLng(33.249582, 35.587263),
+new google.maps.LatLng(33.350187, 35.333385),
+new google.maps.LatLng(33.411856, 35.062027),
+];
 
-		var latlng = new google.maps.LatLng(139.691711, 35.689487);
-		var img = new google.maps.MarkerImage('C:\Users\User.PHASHARON\Desktop\wiki-food\env\lib\site-packages\gmplot\markers/FF0000.png');
-		var marker = new google.maps.Marker({
-		title: "no implementation",
-		icon: img,
-		position: latlng
-		});
-		marker.setMap(map);
+var polygon = new google.maps.Polygon({
+clickable: false,
+geodesic: true,
+fillColor: "#FF0000",
+fillOpacity: 0.300000,
+paths: coords,
+strokeColor: "#FF0000",
+strokeOpacity: 1.000000,
+strokeWeight: 1
+});
 
-		var latlng = new google.maps.LatLng(-106.346771, 56.130367);
-		var img = new google.maps.MarkerImage('C:\Users\User.PHASHARON\Desktop\wiki-food\env\lib\site-packages\gmplot\markers/FF0000.png');
-		var marker = new google.maps.Marker({
-		title: "no implementation",
-		icon: img,
-		position: latlng
-		});
-		marker.setMap(map);
+polygon.setMap(map);
 
-		var latlng = new google.maps.LatLng(-106.346771, 56.130367);
-		var img = new google.maps.MarkerImage('C:\Users\User.PHASHARON\Desktop\wiki-food\env\lib\site-packages\gmplot\markers/FF0000.png');
-		var marker = new google.maps.Marker({
-		title: "no implementation",
-		icon: img,
-		position: latlng
-		});
-		marker.setMap(map);
-
-		var latlng = new google.maps.LatLng(23.321867, 42.697708);
-		var img = new google.maps.MarkerImage('C:\Users\User.PHASHARON\Desktop\wiki-food\env\lib\site-packages\gmplot\markers/FF0000.png');
-		var marker = new google.maps.Marker({
-		title: "no implementation",
-		icon: img,
-		position: latlng
-		});
-		marker.setMap(map);
-
-		var latlng = new google.maps.LatLng(34.781769, 32.085300);
-		var img = new google.maps.MarkerImage('C:\Users\User.PHASHARON\Desktop\wiki-food\env\lib\site-packages\gmplot\markers/FF0000.png');
-		var marker = new google.maps.Marker({
-		title: "no implementation",
-		icon: img,
-		position: latlng
-		});
-		marker.setMap(map);
-
-		var latlng = new google.maps.LatLng(-95.712891, 37.090240);
-		var img = new google.maps.MarkerImage('C:\Users\User.PHASHARON\Desktop\wiki-food\env\lib\site-packages\gmplot\markers/FF0000.png');
-		var marker = new google.maps.Marker({
-		title: "no implementation",
-		icon: img,
-		position: latlng
-		});
-		marker.setMap(map);
-
-		var latlng = new google.maps.LatLng(34.781769, 32.085300);
-		var img = new google.maps.MarkerImage('C:\Users\User.PHASHARON\Desktop\wiki-food\env\lib\site-packages\gmplot\markers/FF0000.png');
-		var marker = new google.maps.Marker({
-		title: "no implementation",
-		icon: img,
-		position: latlng
-		});
-		marker.setMap(map);
-
-		var latlng = new google.maps.LatLng(34.781769, 32.085300);
-		var img = new google.maps.MarkerImage('C:\Users\User.PHASHARON\Desktop\wiki-food\env\lib\site-packages\gmplot\markers/FF0000.png');
-		var marker = new google.maps.Marker({
-		title: "no implementation",
-		icon: img,
-		position: latlng
-		});
-		marker.setMap(map);
-
-		var latlng = new google.maps.LatLng(23.321867, 42.697708);
-		var img = new google.maps.MarkerImage('C:\Users\User.PHASHARON\Desktop\wiki-food\env\lib\site-packages\gmplot\markers/FF0000.png');
-		var marker = new google.maps.Marker({
-		title: "no implementation",
-		icon: img,
-		position: latlng
-		});
-		marker.setMap(map);
 
 	}
 </script>
