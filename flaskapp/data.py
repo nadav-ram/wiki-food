@@ -30,7 +30,7 @@ data = [
         'location': [37.090240, -95.712891]
     },
     {
-        'food': 'stake',
+        'food': 'steak',
         'year': 2019,
         'month': '6',
         'location': [35.689487, 139.691711]
@@ -42,7 +42,7 @@ data = [
         'location': [56.130367, -106.346771]
     },
     {
-        'food': 'stake',
+        'food': 'steak',
         'year': 2018,
         'month': '8',
         'location': [56.130367, -106.346771]
@@ -54,7 +54,7 @@ data = [
         'location': [42.697708, 23.321867]
     },
     {
-        'food': 'stake',
+        'food': 'steak',
         'year': 2019,
         'month': '10',
         'location': [32.085300, 34.781769]

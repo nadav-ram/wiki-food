@@ -1,8 +1,10 @@
-from flask import Flask, render_template, url_for, flash, redirect, request, abort
+from flask import Flask, render_template, url_for, flash, redirect, request, abort, send_from_directory
 from data import data
+from map_test import render_map
 
 app = Flask(__name__)
 app.secret_key = '12345678'
+app.static_url_path = ''
 
 
 # Get foods without duplicates
@@ -38,6 +40,12 @@ def food(food):
         return render_template('food.html', food=food, views=get_views(food))
     else:
         abort(404)
+
+
+@app.route('/render_map/<query>')
+def map(query):
+    render_map(query)
+    return send_from_directory('', 'gmplot.html')
 
 
 if __name__ == '__main__':

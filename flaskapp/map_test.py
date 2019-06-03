@@ -1,16 +1,24 @@
 from gmplot import gmplot
 from data import data
 
-lats, longs = [], []
 
-for view in data:
-    lats.append(view['location'][0])
+def render_map(food):
 
-for view in data:
-    longs.append(view['location'][1])
+    lats, longs = [], []
 
-gmap = gmplot.GoogleMapPlotter(90, -90, 0)
-gmap.scatter(lats, longs, 'red', size = 10)
+    for view in data:
+        if view['food'] == food:
+            lats.append(view['location'][0])
+            longs.append(view['location'][1])
 
-gmap.apikey = 'AIzaSyD-FJQEw4YX1tIhTcN_fmkEe7BXzaxEAuE'
-gmap.draw('gmplot.html')
+    gmap = gmplot.GoogleMapPlotter(25, 0, 3)
+    gmap.scatter(lats, longs, 'red', size=125000, marker=False)
+
+    gmap.draw('gmplot.html')
+
+    # Replace "\" with "/" in the html file
+    s = open('gmplot.html').read()
+    s = s.replace("\\", "/")
+    f = open('gmplot.html', 'w')
+    f.write(s)
+    f.close()
