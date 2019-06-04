@@ -108,4 +108,3 @@ venv.bak/
 
 # Ignore google maps html
 gmplot.html
-flaskapp/gmplot.html
