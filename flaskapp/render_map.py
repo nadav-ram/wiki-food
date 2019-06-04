@@ -18,9 +18,8 @@ def render_map(food):
     gmap.apikey = api_key
     gmap.draw('gmplot.html')
 
-    z = open('gmplot.html').read()
-    # THIS IS THE UPDATED ZOOM!! (CURRENTLY 1.8)
-    z = z.replace("zoom: 2", "zoom: 1.8")
-    f = open('gmplot.html', 'w')
-    f.write(z)
-    f.close()
+    with open('gmplot.html', 'r+') as f:
+        z = f.read()
+        # updated zoom (2 -> 1.8)
+        z = z.replace("zoom: 2", "zoom: 1.8")
+        f.write(z)
