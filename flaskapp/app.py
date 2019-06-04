@@ -8,21 +8,12 @@ app.static_url_path = ''
 
 
 # Get foods without duplicates
-foods = []
-for view in data:
-    if view['food'] in foods:
-        continue
-    foods.append(view['food'])
+foods = {view['food'] for view in data}
 
 
 # Return all views of a food
 def get_views(food):
-    views = []
-    for view in data:
-        if view['food'] == food:
-            views.append(view)
-
-    return views
+    return [view for view in data if view['food'] == food]
 
 
 # Home page
