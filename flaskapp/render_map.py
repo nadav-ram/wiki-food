@@ -1,5 +1,6 @@
 from gmplot import gmplot
 from data import data
+from api_key import api_key
 
 
 def render_map(food):
@@ -14,7 +15,7 @@ def render_map(food):
     gmap = gmplot.GoogleMapPlotter(25, 0, 2)  # lat, long, zoom(default)
     gmap.scatter(lats, longs, 'red', size=150000, marker=False, alpha=1.0)
 
-    gmap.apikey = 'AIzaSyD-FJQEw4YX1tIhTcN_fmkEe7BXzaxEAuE'
+    gmap.apikey = api_key
     gmap.draw('gmplot.html')
 
     z = open('gmplot.html').read()

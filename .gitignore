@@ -109,3 +109,7 @@ venv.bak/
 # Ignore google maps html
 gmplot.html
 flaskapp/gmplot.html
+
+# Ignore secet api key
+api_key.py
+flaskapp/api_key.py
