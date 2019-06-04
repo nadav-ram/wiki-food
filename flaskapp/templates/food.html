@@ -4,8 +4,17 @@
 <h1 class="title is-2">{{ food }}</h1>
 <hr>
 
-<iframe src="http://localhost:5000/render_map/{{ food }}" style="width: 50vw; height: 350px;"></iframe>
-<br>
+<div style="position: relative;">
+    <div style="position: absolute; z-index: 0;">
+        <p>If you can read this than either you are offline or Google Maps is broken D:</p>
+    </div>
+    <div style="position: absolute; z-index: 1;">
+        <iframe src="http://localhost:5000/render_map/{{ food }}" style="width: 100vw; height: 400px;"></iframe>
+
+    </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <hr>
 
 {% for view in views %}
