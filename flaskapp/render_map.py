@@ -6,13 +6,6 @@ from os import path
 
 def render_map(food):
 
-    # lats, longs = [], []
-
-    # for view in data:
-    #     if view['food'] == food:
-    #         lats.append(view['location'][0])
-    #         longs.append(view['location'][1])
-
     lats = [view['location'][0] for view in data if view['food'] == food]
     longs = [view['location'][1] for view in data if view['food'] == food]
 
