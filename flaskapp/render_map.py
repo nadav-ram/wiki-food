@@ -17,9 +17,10 @@ def render_map(food):
     gmap.scatter(lats, longs, 'red', size=150000, marker=False, alpha=1.0)
 
     gmap.apikey = api_key
-    gmap.draw(path.join(getcwd(), 'gmplot.html'))
+    gmap.draw(os.path.join(os.path.dirname(
+        os.path.abspath(__file__)), 'gmplot.html'))
 
-    with open(path.join(getcwd(), 'gmplot.html'), 'r+') as f:
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'gmplot.html'), 'r+') as f:
         z = f.read()
         # updated zoom (2 -> 1.8)
         z = z.replace("zoom: 2", "zoom: 1.8")
