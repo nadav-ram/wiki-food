@@ -1,9 +1,17 @@
 {% extends 'layout.html' %}
 {% block body %}
 
-{% for food in foods %}
-<a href="/food/{{  food  }}">{{ food }}</a>
-<br>
-{% endfor %}
+
+<div class="columns is-multiline">
+
+    {% for food in foods %}
+    <div class="column is-3">
+        <div class="box has-text-centered"><u><a href="/food/{{  food  }}"
+                    class="subtitle is-4 has-text-link">{{ food }}</a></u></div>
+    </div>
+    {% endfor %}
+
+</div>
+
 
 {% endblock %}
