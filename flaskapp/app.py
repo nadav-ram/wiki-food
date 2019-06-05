@@ -26,7 +26,6 @@ def home():
 # Single food page
 @app.route('/food/<food>')
 def food(food):
-
     if food in foods:
         return render_template('food.html', food=food, views=get_views(food))
     else:
