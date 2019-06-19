@@ -2,6 +2,17 @@
 {% block body %}
 
 <h1 class="title is-2">{{ food }}</h1>
+{% if year and month %}
+<h2 class="subtitle">(year: {{year}}, month: {{month}})</h2>
+{% else %}
+<h2 class="subtitle">(Anytime)</h2>
+{% endif %}
+
+<form action="" method="post">
+    <input class="input is-rounded" type="text" placeholder="Year:" style="width: 10rem;" name="year">
+    <input class="input is-rounded" type="text" placeholder="Month:" style="width: 10rem;" name="month">
+    <button class="button is-link is-rounded" type="submit">Search</button>
+</form>
 <hr>
 
 <div style="position: relative;">
@@ -9,7 +20,12 @@
         <p>If you can read this than either you are offline or Google Maps is broken D:</p>
     </div>
     <div style="position: absolute; z-index: 1;">
+        {% if year and month %}
+        <iframe src="/render_map/{{ food }}/{{ year }}/{{ month }}" style="width: 100vw; height: 400px;"></iframe>
+        {% else %}
         <iframe src="/render_map/{{ food }}" style="width: 100vw; height: 400px;"></iframe>
+        {% endif %}
+
 
     </div>
 </div>

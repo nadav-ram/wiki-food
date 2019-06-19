@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, abort, send_from_directory
+from flask import Flask, render_template, url_for, abort, send_from_directory, request
 from data import data
 from render_map import render_map
 
@@ -12,8 +12,11 @@ foods = {view['food'] for view in data}
 
 
 # Return all views of a food
-def get_views(food):
-    return [view for view in data if view['food'] == food]
+def get_views(food, year=None, month=None):
+    if year == None and month == None:
+        return [view for view in data if view['food'] == food]
+    else:
+        return [view for view in data if view['food'] == food and view['year'] == int(year) and view['month'] == int(month)]
 
 
 # Home page
@@ -24,19 +27,28 @@ def home():
 
 
 # Single food page
-@app.route('/food/<food>')
+@app.route('/food/<food>', methods=['GET', 'POST'])
 def food(food):
     if food in foods:
-        return render_template('food.html', food=food, views=get_views(food))
+        if request.method == 'GET':
+            return render_template('food.html', food=food, views=get_views(food))
+        if request.method == 'POST':
+            year = request.form['year']
+            month = request.form['month']
+            return render_template('food.html', food=food, views=get_views(food, year, month), year=year, month=month)
     else:
         abort(404)
 
 
 # Render map by food
 @app.route('/render_map/<query>')
-def map(query):
-    render_map(query)
-    return send_from_directory('', 'gmplot.html')
+@app.route('/render_map/<query>/<year>/<month>')
+def map(query, year=None, month=None):
+    if query in foods:
+        render_map(query, year, month)
+        return send_from_directory('', 'gmplot.html')
+    else:
+        abort(404)
 
 
 if __name__ == '__main__':

@@ -4,10 +4,16 @@ from api_key import api_key
 from os import path
 
 
-def render_map(food):
+def render_map(food, year, month):
 
-    lats = [view['location'][0] for view in data if view['food'] == food]
-    longs = [view['location'][1] for view in data if view['food'] == food]
+    if year != None and month != None:
+        lats = [view['location'][0] for view in data if view['food'] ==
+                food and view['year'] == int(year) and view['month'] == int(month)]
+        longs = [view['location'][1] for view in data if view['food'] ==
+                 food and view['year'] == int(year) and view['month'] == int(month)]
+    else:
+        lats = [view['location'][0] for view in data if view['food'] == food]
+        longs = [view['location'][1] for view in data if view['food'] == food]
 
     gmap = gmplot.GoogleMapPlotter(25, 0, 2)  # lat, long, zoom(default)
     gmap.scatter(lats, longs, 'red', size=150000, marker=False, alpha=1.0)
