@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, flash, redirect, request, abort, send_from_directory
+from flask import Flask, render_template, url_for, abort, send_from_directory
 from data import data
 from render_map import render_map
 
