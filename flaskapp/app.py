@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, abort, send_from_directory, request
+from flask import Flask, render_template, url_for, abort, send_from_directory, request, flash
 from data import data
 from render_map import render_map
 
@@ -35,7 +35,11 @@ def food(food):
         if request.method == 'POST':
             year = request.form['year']
             month = request.form['month']
-            return render_template('food.html', food=food, views=get_views(food, year, month), year=year, month=month)
+            if year == '' or int(year) <= 0 or month == '' or int(month) <= 0:
+                flash('Please provide a year, month and day', 'danger')
+                return render_template('food.html', food=food, views=get_views(food))
+            else:
+                return render_template('food.html', food=food, views=get_views(food, year, month), year=year, month=month)
     else:
         abort(404)
 
