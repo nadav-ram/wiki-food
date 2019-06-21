@@ -1,6 +1,16 @@
 {% extends 'layout.html' %}
 {% block body %}
 
+<form action="" method="post">
+    <input class="input is-rounded" type="text" placeholder="Search:" name="query" style="width: 90%">
+    <button class="button is-link is-rounded" type="submit">Search</button>
+</form>
+{% if query %}
+<br>
+<h4 class="subtitle">Search: {{query}}</h4>
+{% endif %}
+<hr>
+
 
 <div class="columns is-multiline">
 

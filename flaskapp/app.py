@@ -20,10 +20,15 @@ def get_views(food, year=None, month=None):
 
 
 # Home page
-@app.route('/home')
-@app.route('/')
+@app.route('/home', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def home():
-    return render_template('home.html', foods=foods)
+    if request.method == 'GET':
+        return render_template('home.html', foods=foods)
+    elif request.method == 'POST':
+        query = str(request.form['query'])
+        search_foods = {view['food'] for view in data if query in view['food']}
+        return render_template('home.html', foods=search_foods, query=query)
 
 
 # Single food page
@@ -45,7 +50,7 @@ def food(food):
         abort(404)
 
 
-# Render map by food
+# Render map file by food
 @app.route('/render_map/<query>')
 @app.route('/render_map/<query>/<year>/<month>/<day>')
 def map(query, year=None, month=None, day=None):
