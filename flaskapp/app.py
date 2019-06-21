@@ -35,21 +35,22 @@ def food(food):
         if request.method == 'POST':
             year = request.form['year']
             month = request.form['month']
-            if year == '' or int(year) <= 0 or month == '' or int(month) <= 0:
+            day = request.form['day']
+            if year == '' or int(year) <= 0 or month == '' or int(month) <= 0 or day == '' or int(day) <= 0:
                 flash('Please provide a year, month and day', 'danger')
                 return render_template('food.html', food=food, views=get_views(food))
             else:
-                return render_template('food.html', food=food, views=get_views(food, year, month), year=year, month=month)
+                return render_template('food.html', food=food, views=get_views(food, year, month), year=year, month=month, day=day)
     else:
         abort(404)
 
 
 # Render map by food
 @app.route('/render_map/<query>')
-@app.route('/render_map/<query>/<year>/<month>')
-def map(query, year=None, month=None):
+@app.route('/render_map/<query>/<year>/<month>/<day>')
+def map(query, year=None, month=None, day=None):
     if query in foods:
-        render_map(query, year, month)
+        render_map(query, year, month, day)
         return send_from_directory('', 'gmplot.html')
     else:
         abort(404)

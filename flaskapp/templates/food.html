@@ -11,6 +11,7 @@
 <form action="" method="post">
     <input class="input is-rounded" type="text" placeholder="Year:" style="width: 10rem;" name="year">
     <input class="input is-rounded" type="text" placeholder="Month:" style="width: 10rem;" name="month">
+    <input class="input is-rounded" type="text" placeholder="Day:" style="width: 10rem;" name="day">
     <button class="button is-link is-rounded" type="submit">Search</button>
 </form>
 <hr>
@@ -21,7 +22,8 @@
     </div>
     <div style="position: absolute; z-index: 1;">
         {% if year and month %}
-        <iframe src="/render_map/{{ food }}/{{ year }}/{{ month }}" style="width: 100vw; height: 400px;"></iframe>
+        <iframe src="/render_map/{{ food }}/{{ year }}/{{ month }}/{{ day }}"
+            style="width: 100vw; height: 400px;"></iframe>
         {% else %}
         <iframe src="/render_map/{{ food }}" style="width: 100vw; height: 400px;"></iframe>
         {% endif %}

@@ -4,13 +4,13 @@ from api_key import api_key
 from os import path
 
 
-def render_map(food, year, month):
+def render_map(food, year, month, day):
 
-    if year != None and month != None:
+    if year != None and month != None and day != None:
         lats = [view['location'][0] for view in data if view['food'] ==
-                food and view['year'] == int(year) and view['month'] == int(month)]
+                food and view['year'] == int(year) and view['month'] == int(month) and view['day'] == int(day)]
         longs = [view['location'][1] for view in data if view['food'] ==
-                 food and view['year'] == int(year) and view['month'] == int(month)]
+                 food and view['year'] == int(year) and view['month'] == int(month) and view['day'] == int(day)]
     else:
         lats = [view['location'][0] for view in data if view['food'] == food]
         longs = [view['location'][1] for view in data if view['food'] == food]
