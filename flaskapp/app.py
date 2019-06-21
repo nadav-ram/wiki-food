@@ -26,7 +26,7 @@ def home():
     if request.method == 'GET':
         return render_template('home.html', foods=foods)
     elif request.method == 'POST':
-        query = str(request.form['query'])
+        query = str(request.form['query']).lower()
         search_foods = {view['food'] for view in data if query in view['food']}
         return render_template('home.html', foods=search_foods, query=query)
 
