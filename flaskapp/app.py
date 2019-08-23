@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, abort, send_from_directory, request, flash
+from flask import Flask, render_template, url_for, abort, send_from_directory, request, flash, jsonify
 from data import data
 from render_map import render_map
 
@@ -50,15 +50,25 @@ def food(food):
         abort(404)
 
 
-# Render map file by food
-@app.route('/render_map/<query>')
-@app.route('/render_map/<query>/<year>/<month>/<day>')
-def map(query, year=None, month=None, day=None):
-    if query in foods:
-        render_map(query, year, month, day)
-        return send_from_directory('', 'gmplot.html')
-    else:
-        abort(404)
+@app.route('/get_data', methods=['POST'])
+def get_data():
+    file_number = request.form['value']
+    data = list()
+    items = list()
+
+    with open(f'gtrends/geoMap{file_number}.csv', 'r') as f:
+        csv = f.read().split('\n')
+        for line in csv[3:]:
+            data.append(line)
+
+    for item in data:
+        parts = item.split(',')
+        if len(parts) > 1 and parts[1] != '':
+            items.append({parts[0]: parts[1]})
+        else:
+            items.append({parts[0]: '1'})
+
+    return jsonify(items)
 
 
 if __name__ == '__main__':

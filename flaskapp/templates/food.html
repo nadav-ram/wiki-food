@@ -10,6 +10,8 @@
 
 
 
+<input type="range" name="points" min="1" max="10" id="slider"><span id="range_here">Value: </span>
+<h3 id="result_here">Result: </h3>
 
 
 
@@ -25,5 +27,7 @@
 </div>
 {% endfor %}
 
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="{{ url_for('static', filename = 'app.js') }}"></script>
 
 {% endblock body %}
