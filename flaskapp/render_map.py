@@ -1,6 +1,6 @@
 from gmplot import gmplot
 from data import data
-from api_key import api_key
+# from api_key import api_key
 from os import path
 
 
@@ -18,7 +18,7 @@ def render_map(food, year, month, day):
     gmap = gmplot.GoogleMapPlotter(25, 0, 2)  # lat, long, zoom(default)
     gmap.scatter(lats, longs, 'red', size=150000, marker=False, alpha=1.0)
 
-    gmap.apikey = api_key
+    gmap.apikey = 'api_key'
     gmap.draw(path.join(path.dirname(path.abspath(__file__)), 'gmplot.html'))
 
     with open(path.join(path.dirname(path.abspath(__file__)), 'gmplot.html'), 'r+') as f:
